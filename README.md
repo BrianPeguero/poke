@@ -1,4 +1,4 @@
-# Poke
+# [https://projectpokemon.org/images/normal-sprite/bulbasaur.gif] Poke [https://projectpokemon.org/images/normal-sprite/squirtle.gif]
 
 Poke is a pokedex made in java that is able to search for pokemon using the PokeAPI. A trainer is able to log in, search for a pokemon, add it to your team, remove from team, and display current team.
 
