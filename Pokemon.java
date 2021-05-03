@@ -39,15 +39,14 @@ public class Pokemon {
     public void displayStats() {
         System.out.println("Stats");
 
-        String[] statsArray = (String[]) this.stats.keySet().toArray();
-
-        for (int i = 0; i < statsArray.length; i++) {
-            System.out.println(statsArray[i] + " : " + this.stats.get(statsArray[i]));
-        }
+        this.stats.forEach((k, v) -> System.out.println(k + ": " + v));
     }
 
     public void displayPokemon() {
         System.out.println(this.getName() + " : #" + this.getId());
+        displayTypes();
+        displayStats();
+        System.out.println("");
     }
 
 }
