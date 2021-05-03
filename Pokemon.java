@@ -30,6 +30,7 @@ public class Pokemon {
         for (String i : this.types) {
             System.out.print(i + " ");
         }
+        System.out.println("");
     }
 
     public HashMap<String, Integer> getStats() {
