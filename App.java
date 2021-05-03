@@ -142,9 +142,11 @@ public class App {
         System.out.println("5. quit");
     }
 
-    public static void searchPokemon(int pokeid, Trainer t) {
+    public static Pokemon createPokemon(int pokeid) {
         URL url;
         Scanner sc;
+        Pokemon p = null;
+
         try {
             sc = new Scanner(System.in);
 
@@ -190,10 +192,25 @@ public class App {
             pokeStats.put("Sp. Defence", spDefence);
             pokeStats.put("Speed", speed);
 
-            Pokemon p = new Pokemon(String.valueOf(pokeid), name, types, pokeStats);
+            p = new Pokemon(String.valueOf(pokeid), name, types, pokeStats);
 
             System.out.println("");
             p.displayPokemon();
+
+        } catch (Exception e) {
+            System.out.println("error");
+        }
+
+        return p;
+    }
+
+    public static void searchPokemon(int pokeid, Trainer t) {
+        Scanner sc;
+
+        try {
+            sc = new Scanner(System.in);
+
+            Pokemon p = createPokemon(pokeid);
 
             System.out.println("\nWould you like to add this pokemon to your team:(y/n)");
             String choice = sc.next();
@@ -214,6 +231,16 @@ public class App {
         }
     }
 
+    public static void addPokemon(int pokeid, Trainer t) {
+
+        Pokemon p = createPokemon(pokeid);
+
+        t.addPokemon(p);
+    }
+
+    public static void removePokemon(int pokeid, Trainer t) {
+        t.removePokemon(String.valueOf(pokeid));
+    }
 
 
     public static void main(String[] args) {
@@ -245,10 +272,17 @@ public class App {
             }
             
             if(choice == 2) {
-                
+                System.out.print("Please enter the id of the pokemon you would like to add to your party: ");
+                int pokeid = sc.nextInt();
+
+                addPokemon(pokeid, t);
             }
             
             if(choice ==3) {
+                System.out.print("Please enter the id of the pokemon you would like to remove from your party: ");
+                int pokeid = sc.nextInt();
+
+                removePokemon(pokeid, t);
                 
             }
             

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -134,6 +133,8 @@ public class Trainer {
 
         if (index != -1) {
             this.team.remove(index);
+
+            //update file
         } else {
             System.out.println("\nLooks like that pokemon isn't in your team. Please make sure you entered your id correctly\n");
         }
