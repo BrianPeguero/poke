@@ -16,7 +16,7 @@ The .jar file is inn the project but to install and use it you need to go to
 ```
 3. Click the Add Library button, and choose the appropriate Java EE Library.
 4. Click Next to view the library contents, and click Finish.
-```]
+```
 
 ## Usage
 
