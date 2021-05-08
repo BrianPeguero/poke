@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -88,7 +87,7 @@ public class App {
         String username;
         String password;
         ArrayList<String> users = new ArrayList<String>();
-        int count = 0;
+        int count = 0, newId = 0;
         Trainer t = null;
         Scanner sc = new Scanner(System.in);
 
@@ -96,8 +95,11 @@ public class App {
 
         try {
             File file = new File("trainers.txt");
+            File fileteam = new File("team.txt");
             Scanner kb = new Scanner(file);
+            Scanner kbteam = new Scanner(fileteam);
             FileWriter fw = new FileWriter(file, true);
+            FileWriter fwteam = new FileWriter(fileteam, true);
 
 
             while(kb.hasNextLine()) {
@@ -115,16 +117,20 @@ public class App {
                 username = sc.next().strip();
             }
 
+            newId = count++;
 
             System.out.print("\nPlease enter your password: ");
             password = sc.next().strip();
 
-            fw.append((count++ + ", " + username + ", " + password + "\n"));
-            
+            fw.append(("\n" + newId + ", " + username + ", " + password));
+            fwteam.append("\n" + String.valueOf(newId));
+
+            fwteam.flush();
+            fwteam.close();
             fw.flush();
             fw.close();
 
-            t = new Trainer(count+1, username, password);
+            t = new Trainer(newId, username, password);
 
         } catch (Exception e) {
             System.out.println("can't find file");
