@@ -1,3 +1,4 @@
 id, pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6
 2, 38, 40
-1, 30, 50, 23
+1, 30, 23, 700
+3, 700, 500

@@ -3,13 +3,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
 import org.json.JSONObject;
@@ -194,6 +191,7 @@ public class Trainer {
     private ArrayList<Pokemon> fillTeam() {
         ArrayList<Pokemon> pokeTeam = new ArrayList<Pokemon>();
         File file = new File("team.txt");
+        Pokemon p = null;
 
         try {
             Scanner sc = new Scanner(file);
@@ -248,7 +246,43 @@ public class Trainer {
                             pokeStats.put("Sp. Defence", spDefence);
                             pokeStats.put("Speed", speed);
 
-                            Pokemon p = new Pokemon(pokeid, name, types, pokeStats);
+                            if(types[0].equals("normal")) {
+                                p = new NormalPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("fire")) {
+                                p = new FirePokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("water")) {
+                                p = new WaterPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("grass")) {
+                                p = new GrassPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("Electric")) {
+                                p = new ElectricPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("ice")) {
+                                p = new IcePokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("fighting")) {
+                                p = new FightingPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("poison")) {
+                                p = new PoisonPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("ground")) {
+                                p = new GroundPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("flying")) {
+                                p = new FlyingPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("psychic")) {
+                                p = new PsychicPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("bug")) {
+                                p = new BugPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("rock")) {
+                                p = new RockPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("ghost")) {
+                                p = new GhostPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("dark")) {
+                                p = new DarkPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("dragon")) {
+                                p = new DragonPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else if(types[0].equals("steel")) {
+                                p = new SteelPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            } else {
+                                p = new FairyPokemon(String.valueOf(pokeid), name, types, pokeStats);
+                            }
 
                             pokeTeam.add(p);
                         }

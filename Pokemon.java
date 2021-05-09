@@ -51,3 +51,165 @@ public class Pokemon {
     }
 
 }
+
+class WaterPokemon extends Pokemon{
+
+    public WaterPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+    
+}
+
+class NormalPokemon extends Pokemon {
+
+    public NormalPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class FirePokemon extends Pokemon {
+
+    public FirePokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class GrassPokemon extends Pokemon {
+
+    public GrassPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class ElectricPokemon extends Pokemon {
+
+    public ElectricPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class IcePokemon extends Pokemon {
+
+    public IcePokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class FightingPokemon extends Pokemon {
+
+    public FightingPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class PoisonPokemon extends Pokemon {
+
+    public PoisonPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class GroundPokemon extends Pokemon {
+
+    public GroundPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class FlyingPokemon extends Pokemon {
+
+    public FlyingPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class PsychicPokemon extends Pokemon {
+
+    public PsychicPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class BugPokemon extends Pokemon {
+
+    public BugPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class RockPokemon extends Pokemon {
+
+    public RockPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class GhostPokemon extends Pokemon {
+
+    public GhostPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class DarkPokemon extends Pokemon {
+
+    public DarkPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class DragonPokemon extends Pokemon {
+
+    public DragonPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class SteelPokemon extends Pokemon {
+
+    public SteelPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
+
+class FairyPokemon extends Pokemon {
+
+    public FairyPokemon(String id, String name, String[] types, HashMap<String, Integer> stats) {
+        super(id, name, types, stats);
+        //TODO Auto-generated constructor stub
+    }
+
+}
