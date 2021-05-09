@@ -270,22 +270,24 @@ public class App {
         choice = sc.nextInt();
 
         while(choice != 5) {
+            System.out.println("");
+
             if(choice == 1) {
-                System.out.print("Please enter the pokemon you would like to search for: ");
+                System.out.print("\nPlease enter the pokemon you would like to search for: ");
                 int pokeid = sc.nextInt();
 
                 searchPokemon(pokeid, t);
             }
             
             if(choice == 2) {
-                System.out.print("Please enter the id of the pokemon you would like to add to your party: ");
+                System.out.print("\nPlease enter the id of the pokemon you would like to add to your party: ");
                 int pokeid = sc.nextInt();
 
                 addPokemon(pokeid, t);
             }
             
             if(choice ==3) {
-                System.out.print("Please enter the id of the pokemon you would like to remove from your party: ");
+                System.out.print("\nPlease enter the id of the pokemon you would like to remove from your party: ");
                 int pokeid = sc.nextInt();
 
                 removePokemon(pokeid, t);

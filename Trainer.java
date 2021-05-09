@@ -3,10 +3,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import org.json.JSONObject;
@@ -130,11 +133,59 @@ public class Trainer {
             }
         }
 
-
         if (index != -1) {
             this.team.remove(index);
 
-            //update file
+            File file = new File("team.txt");
+            File filetemp = new File("temp.txt");
+            try {
+                String userTeam = "";
+                Scanner sc = new Scanner(file);
+                FileWriter temp = new FileWriter(filetemp, true);
+                Scanner tempsc = new Scanner(filetemp);
+
+                while(sc.hasNextLine()) {
+                    String line = sc.nextLine().strip();
+                    String[] user = line.split(",");
+                    
+                    if(user[0].strip().equals(String.valueOf(this.id))) {
+                        userTeam = line;
+                        continue;
+                    }
+
+                    temp.append(line + "\n");
+                    temp.flush();
+                }
+
+                file.delete();
+                FileWriter fw = new FileWriter("team.txt", true);
+
+                while(tempsc.hasNextLine()) {
+                    String line = tempsc.nextLine().strip();
+
+                    fw.append(line + "\n");
+                    fw.flush();
+                }
+
+                String[] teamArray = userTeam.split(",");
+                String[] newTeam = new String[teamArray.length - 1];
+
+                for(int i = 0, j = 0; i < teamArray.length; i++) {
+                    if(!teamArray[i].strip().equals(id)) {
+                        newTeam[j++] = teamArray[i];
+                    }
+                }
+
+                fw.append(String.join(",", newTeam));
+
+                fw.flush();
+                fw.close();
+
+                filetemp.delete();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         } else {
             System.out.println("\nLooks like that pokemon isn't in your team. Please make sure you entered your id correctly\n");
         }
